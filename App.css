@@ -1,0 +1,113 @@
+/* App-specific styles */
+
+/* Ensure smooth transitions */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Section pinning styles */
+.section-pinned {
+  will-change: transform;
+}
+
+/* Image optimization */
+img {
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* Button hover effects */
+a, button {
+  transition: all 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .section-pinned .absolute[style*="left: 6vw"] {
+    left: 4vw !important;
+    width: 50vw !important;
+    height: 50vw !important;
+  }
+  
+  .section-pinned .absolute[style*="left: 56vw"] {
+    left: 58vw !important;
+    width: 38vw !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-pinned {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  
+  .section-pinned .absolute[style*="left: 6vw"] {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 70vw !important;
+    height: 70vw !important;
+    margin-bottom: 2rem;
+  }
+  
+  .section-pinned .absolute[style*="left: 56vw"],
+  .section-pinned .absolute[style*="left: 58vw"] {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    text-align: center;
+  }
+  
+  .section-pinned .absolute[style*="left: 8vw"],
+  .section-pinned .absolute[style*="left: 58vw"] {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    padding: 2rem;
+  }
+  
+  .hero-ring,
+  .circle-ring {
+    display: none;
+  }
+  
+  .text-display {
+    font-size: clamp(2rem, 8vw, 3.5rem) !important;
+  }
+}
+
+/* Ensure text readability on images */
+.bg-espresso\/30,
+.bg-espresso\/40 {
+  backdrop-filter: blur(0.5px);
+}
+
+/* Card hover effects */
+.shadow-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.shadow-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 40px rgba(30, 24, 18, 0.16);
+}
+
+/* Navigation visibility */
+nav {
+  transition: opacity 0.3s ease;
+}
+
+/* Loading state */
+.loading {
+  opacity: 0;
+}
+
+.loaded {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
